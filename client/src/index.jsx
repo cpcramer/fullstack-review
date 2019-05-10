@@ -11,13 +11,22 @@ class App extends React.Component {
     this.state = { 
       repos: []
     }
-
   }
 
   search (term) {
     console.log(`${term} was searched`);
     // TODO
     // Send a POST request to your express server
+    axios.post('/localhost:1128/repos', {
+      firstName: 'Chad',
+      lastName: 'Cramer'
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
     // Your server should GET that user's repos from GitHub's API
     // Your server should then save the repos to the database
 
