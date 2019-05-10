@@ -17,7 +17,7 @@ class App extends React.Component {
     console.log(`${term} was searched`);
     // TODO
     // Send a POST request to your express server
-    axios.post('/localhost:1128/repos', {
+    axios.post('http://localhost:1128/repos', {
       firstName: 'Chad',
       lastName: 'Cramer'
     })
