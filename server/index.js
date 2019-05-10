@@ -1,9 +1,16 @@
+// libraries
 const express = require('express');
-let app = express();
+const app = express()
+const port = 1128;
+const request = require('request');
 
+// middleware
 app.use(express.static(__dirname + '/../client/dist'));
 
+// routes
 app.post('/repos', function (req, res) {
+  console.log('hello post');
+  res.send('Hello post');
   // TODO - your code here!
   // This route should take the github username provided
   // and get the repo information from the github API, then
@@ -11,12 +18,13 @@ app.post('/repos', function (req, res) {
 });
 
 app.get('/repos', function (req, res) {
+  console.log('hello get');
+  res.send('Hello get');
   // TODO - your code here!
   // This route should send back the top 25 repos
 });
 
-let port = 1128;
-
+// listen
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
 });
